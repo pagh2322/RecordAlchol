@@ -16,39 +16,55 @@ struct MainView: View {
                         .font(.title)
                         .bold()
                         .padding(.top, 44)
+                        .padding(.horizontal, 25)
                     
                     HStack {
-                        NavigationLink(destination: DetailView(alchol: .beer, number: 5, price: 20000)) {
+                        NavigationLink(destination: DetailView(alchol: .beer, number: 5, price: 20000, month: 4)) {
                             MonthlyDrinkItem(alchol: .beer, number: 5, price: 20000)
                                 .foregroundColor(.primary)
                         }
                         Spacer()
-                        NavigationLink(destination: DetailView(alchol: .soju, number: 18, price: 72000)) {
+                        NavigationLink(destination: DetailView(alchol: .soju, number: 18, price: 72000, month: 4)) {
                             MonthlyDrinkItem(alchol: .soju, number: 18, price: 72000)
                                 .foregroundColor(.primary)
                         }
                     }
                     .padding(.top, 15)
+                    .padding(.horizontal, 25)
+                    
+                    Rectangle()
+                        .fill(Color(UIColor.systemGroupedBackground))
+                        .frame(width: UIScreen.main.bounds.width, height: 15)
+                        .padding(.top, 30)
                     
                     Text("최근 기록들")
                         .font(.title)
                         .bold()
                         .padding(.top, 30)
+                        .padding(.horizontal, 25)
                     
                     RecentRecordList()
                         .padding(.top, 10)
+                        .padding(.horizontal, 25)
+                    
+                    Rectangle()
+                        .fill(Color(UIColor.systemGroupedBackground))
+                        .frame(width: UIScreen.main.bounds.width, height: 15)
+                        .padding(.top, 30)
                     
                     Text("지난 달에 마신 양")
                         .font(.title)
                         .bold()
                         .padding(.top, 30)
+                        .padding(.horizontal, 25)
                     
                     LastDrinkRecordList()
                         .padding(.top, 10)
+                        .padding(.horizontal, 25)
                 }
-                .padding(.horizontal, 25)
             }
             .navigationBarHidden(true)
+            .padding(.top, 1)
         }
     }
 }

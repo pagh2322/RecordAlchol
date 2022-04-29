@@ -18,7 +18,5 @@ enum Alchol {
         case .soju:
             return "소주"
         }
-    }
-    
-    
+    }    
 }

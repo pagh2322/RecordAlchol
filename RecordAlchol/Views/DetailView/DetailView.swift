@@ -12,24 +12,46 @@ struct DetailView: View {
     var number: Int
     var price: Int
     @State var showModalView = false
+    @State var month: Int
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
-                    Image(systemName: "chevron.left")
+                    Button(action: {
+                        if self.month == 1 {
+                            self.month = 12
+                        } else {
+                            self.month -= 1
+                        }
+                    }) {
+                        Image(systemName: "chevron.left")
+                    }
+                    .foregroundColor(.primary)
                     
-                    Text("4월")
+                    Text("\(self.month)월")
                         .bold()
                     
-                    Image(systemName: "chevron.right")
+                    Button(action: {
+                        if self.month == 12 {
+                            self.month = 1
+                        } else {
+                            self.month += 1
+                        }
+                    }) {
+                        Image(systemName: "chevron.right")
+                    }
+                    .foregroundColor(.primary)
                     
                     Spacer()
                 }
                 .padding(.top, 15)
+                .padding(.horizontal, 25)
                 
                 Text(self.alchol.title)
-                    .padding(.top, 15)
+                    .padding(.top, 20)
+                    .padding(.horizontal, 25)
                 
                 HStack {
                     Text("\(self.number)병 마셨어요")
@@ -41,12 +63,17 @@ struct DetailView: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
-                .padding(.top, 20)
+                .padding(.top, 10)
+                .padding(.horizontal, 25)
+                
+                Rectangle()
+                    .fill(Color(UIColor.systemGroupedBackground))
+                    .frame(width: UIScreen.main.bounds.width, height: 15)
+                    .padding(.top, 20)
                 
                 HStack {
                     Text("전체 기록")
                         .font(.title2)
-                        .padding(.top, 30)
                     Spacer()
                     
                     Button(action: {
@@ -58,16 +85,27 @@ struct DetailView: View {
                     .sheet(isPresented: self.$showModalView) {
                         AddRecordView(showModalView: self.$showModalView)
                     }
-                    
                 }
+                .padding(.top, 30)
+                .padding(.horizontal, 25)
                 
                 
                 AllRecordList()
                     .padding(.top, 15)
+                    .padding(.horizontal, 25)
             }
-            .padding(.horizontal, 25)
         }
         .navigationBarTitleDisplayMode(.inline)
-//        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "arrow.backward")
+                        .foregroundColor(.primary)
+                }
+            }
+        }
     }
 }

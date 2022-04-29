@@ -1,0 +1,116 @@
+[
+    {
+        "month": 2,
+        "totalPrice": 109000,
+        "numberOfBeer": 14,
+        "numberOfSoju": 12,
+        "beerList": [
+            {
+                "name": "카스",
+                "number": 3,
+                "price": 12000,
+                "date": "2022.02.24"
+            },
+            {
+                "name": "칭따오",
+                "number": 11,
+                "price": 55000,
+                "date": "2022.02.11"
+            }
+        ],
+        "sojuList": [
+            {
+                "name": "진로",
+                "number": 6,
+                "price": 18000,
+                "date": "2022.02.20"
+            },
+            {
+                "name": "처음처럼",
+                "number": 6,
+                "price": 24000,
+                "date": "2022.02.08"
+            }
+        ]
+    },
+    {
+        "month": 3,
+        "totalPrice": 99500,
+        "numberOfBeer": 4,
+        "numberOfSoju": 20,
+        "beerList": [
+            {
+                "name": "카스 라이트",
+                "number": 3,
+                "price": 15000,
+                "date": "2022.03.04"
+            },
+            {
+                "name": "하이트",
+                "number": 1,
+                "price": 3000,
+                "date": "2022.03.15"
+            }
+        ],
+        "sojuList": [
+            {
+                "name": "참이슬",
+                "number": 6,
+                "price": 24000,
+                "date": "2022.02.04"
+            },
+            {
+                "name": "처음처럼",
+                "number": 3,
+                "price": 13500,
+                "date": "2022.02.28"
+            },
+            {
+                "name": "청하",
+                "number": 11,
+                "price": 44000,
+                "date": "2022.02.28"
+            }
+        ]
+    },
+    {
+        "month": 4,
+        "totalPrice": 112000,
+        "numberOfBeer": 5,
+        "numberOfSoju": 18,
+        "beerList": [
+            {
+                "name": "하이트",
+                "number": 3,
+                "price": 18000,
+                "date": "2022.04.03"
+            },
+            {
+                "name": "카스",
+                "number": 2,
+                "price": 6000,
+                "date": "2022.04.14"
+            }
+        ],
+        "sojuList": [
+            {
+                "name": "진로",
+                "number": 6,
+                "price": 36000,
+                "date": "2022.04.03"
+            },
+            {
+                "name": "진로",
+                "number": 8,
+                "price": 32000,
+                "date": "2022.04.21"
+            },
+            {
+                "name": "참이슬",
+                "number": 4,
+                "price": 20000,
+                "date": "2022.04.22"
+            }
+        ]
+    }
+]

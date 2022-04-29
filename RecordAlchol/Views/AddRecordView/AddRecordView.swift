@@ -13,6 +13,7 @@ struct AddRecordView: View {
     @State var sojuSelected = false
     @State var number = ""
     @State var price = ""
+    @State var name = ""
     @State var selectedDate = Date()
     
     var body: some View {
@@ -21,7 +22,8 @@ struct AddRecordView: View {
                 HStack {
                     Text("종류")
                         .foregroundColor(.secondary)
-                        .padding(.trailing, 45)
+                    
+                    Spacer()
                     
                     Text("맥주")
                         .padding(.horizontal, 20)
@@ -45,10 +47,25 @@ struct AddRecordView: View {
                             self.sojuSelected = true
                         }
                         .padding(.leading, 15)
+                    
+                    Spacer()
                 }
                 .padding(.top, 20)
                 Divider()
                     .padding(.top, 10)
+                
+                HStack {
+                    Text("이름")
+                        .foregroundColor(.secondary)
+                    
+                    TextField("술의 이름을 입력하세요", text: self.$name)
+                        .keyboardType(.default)
+                        .multilineTextAlignment(.trailing)
+                        .padding(.leading, 71)
+                }
+                .padding(.top, 20)
+                Divider()
+                    .padding(.top, 20)
                 
                 HStack {
                     Text("양")
@@ -56,6 +73,7 @@ struct AddRecordView: View {
                     
                     TextField("병 크기는 소주병 기준입니다", text: self.$number)
                         .keyboardType(.decimalPad)
+                        .multilineTextAlignment(.trailing)
                         .padding(.leading, 60)
                     
                     Text("병")
@@ -79,6 +97,7 @@ struct AddRecordView: View {
                     
                     TextField("금액을 입력하세요", text: self.$price)
                         .keyboardType(.decimalPad)
+                        .multilineTextAlignment(.trailing)
                         .padding(.leading, 45)
                     
                     Text("원")
@@ -94,8 +113,8 @@ struct AddRecordView: View {
                     Button(action: {
                         self.showModalView = false
                     }) {
-                        Text("Cancel")
-                            .font(.body)
+                        Text("취소")
+                            .bold()
                     }
                     .foregroundColor(.primary)
                 }
@@ -103,10 +122,10 @@ struct AddRecordView: View {
                     Button(action: {
                         
                     }) {
-                        Text("Confirm")
-                            .font(.body)
+                        Text("완료")
+                            .bold()
                     }
-                    .foregroundColor(.primary)
+                    .foregroundColor(self.name.isEmpty || self.number.isEmpty || self.price.isEmpty ? .secondary : .primary)
                 }
             }
         }
