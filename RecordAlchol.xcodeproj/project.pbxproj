@@ -20,6 +20,7 @@
 		B7141F5028197204004B9CEF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7141F4F28197204004B9CEF /* DetailView.swift */; };
 		B740AB722819748900EA91AD /* AllRecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B740AB712819748900EA91AD /* AllRecordList.swift */; };
 		B740AB752819758800EA91AD /* AddRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B740AB742819758800EA91AD /* AddRecordView.swift */; };
+		B7A78B06281F9FC800491984 /* ThickDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A78B05281F9FC800491984 /* ThickDivider.swift */; };
 		B7A8FDCB281BA1C60092E3DE /* RecordData.json in Resources */ = {isa = PBXBuildFile; fileRef = B7A8FDCA281BA1C60092E3DE /* RecordData.json */; };
 		B7A8FDCE281BABBF0092E3DE /* MonthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8FDCD281BABBF0092E3DE /* MonthData.swift */; };
 		B7A8FDD0281BABCD0092E3DE /* AlcholListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8FDCF281BABCD0092E3DE /* AlcholListData.swift */; };
@@ -43,6 +44,7 @@
 		B7141F4F28197204004B9CEF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		B740AB712819748900EA91AD /* AllRecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecordList.swift; sourceTree = "<group>"; };
 		B740AB742819758800EA91AD /* AddRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordView.swift; sourceTree = "<group>"; };
+		B7A78B05281F9FC800491984 /* ThickDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThickDivider.swift; sourceTree = "<group>"; };
 		B7A8FDCA281BA1C60092E3DE /* RecordData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecordData.json; sourceTree = "<group>"; };
 		B7A8FDCD281BABBF0092E3DE /* MonthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthData.swift; sourceTree = "<group>"; };
 		B7A8FDCF281BABCD0092E3DE /* AlcholListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcholListData.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				B740AB732819757A00EA91AD /* AddRecordView */,
 				B7141F4E281971F7004B9CEF /* DetailView */,
 				B7141F3D2819618F004B9CEF /* MainView */,
+				B7A78B05281F9FC800491984 /* ThickDivider.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				B7A8FDD3281BBC8C0092E3DE /* LoadFunction.swift in Sources */,
 				B7A8FDD0281BABCD0092E3DE /* AlcholListData.swift in Sources */,
 				B7141F2F2819603C004B9CEF /* RecordAlcholApp.swift in Sources */,
+				B7A78B06281F9FC800491984 /* ThickDivider.swift in Sources */,
 				B7B85C39281BC360000C29B9 /* CustomColor.swift in Sources */,
 				B7141F43281964F5004B9CEF /* Alchol.swift in Sources */,
 				B7141F3F281961AF004B9CEF /* MonthlyDrinkItem.swift in Sources */,

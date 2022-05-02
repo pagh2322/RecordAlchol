@@ -1,5 +1,17 @@
 [
     {
+        "month": 1,
+        "totalPrice": 0,
+        "numberOfBeer": 0,
+        "numberOfSoju": 0,
+        "beerList": [
+            
+        ],
+        "sojuList": [
+            
+        ]
+    },
+    {
         "month": 2,
         "totalPrice": 109000,
         "numberOfBeer": 14,

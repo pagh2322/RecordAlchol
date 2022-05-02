@@ -18,6 +18,7 @@ struct DetailView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .leading, spacing: 0) {
+                // 월 이동 버튼
                 HStack {
                     Button(action: {
                         if self.month == 1 {
@@ -66,14 +67,12 @@ struct DetailView: View {
                 .padding(.top, 10)
                 .padding(.horizontal, 25)
                 
-                Rectangle()
-                    .fill(Color(UIColor.systemGroupedBackground))
-                    .frame(width: UIScreen.main.bounds.width, height: 15)
+                ThickDivider()
                     .padding(.top, 20)
                 
                 HStack {
                     Text("전체 기록")
-                        .font(.title2)
+                        .font(.title3)
                     Spacer()
                     
                     Button(action: {

@@ -16,12 +16,15 @@ struct LastDrinkRecordItem: View {
     var body: some View {
         HStack {
             Text("\(self.month)월")
+                .bold()
             
             Text("맥주 \(self.numberOfBeer)병")
                 .bold()
+                .foregroundColor(Color(red: 176/255, green: 94/255, blue: 39/255))
             
             Text("소주 \(self.numberOfSoju)병")
                 .bold()
+                .foregroundColor(Color(red: 48/255, green: 170/255, blue: 221/255))
             
             Spacer()
             

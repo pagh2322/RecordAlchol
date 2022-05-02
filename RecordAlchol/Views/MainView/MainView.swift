@@ -8,54 +8,54 @@
 import SwiftUI
 
 struct MainView: View {
+    @State var searchText = ""
+    @EnvironmentObject var allData: AllData
+    
+    @ViewBuilder
+    private func TitleText(_ text: String) -> some View {
+        Text(text)
+            .font(.title2)
+            .bold()
+    }
+    
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("이번 달에 마신 양")
-                        .font(.title)
-                        .bold()
-                        .padding(.top, 44)
+                    TitleText("이번 달에 마신 양")
+                        .padding(.top, 10)
                         .padding(.horizontal, 25)
                     
                     HStack {
-                        NavigationLink(destination: DetailView(alchol: .beer, number: 5, price: 20000, month: 4)) {
-                            MonthlyDrinkItem(alchol: .beer, number: 5, price: 20000)
+                        NavigationLink(destination: DetailView(alchol: .beer, number: self.allData.numberOfMainCurrentMonthBeerRecord, price: self.allData.priceOfMainCurrentMonthBeerRecord, month: self.allData.currentMonth)) {
+                            MonthlyDrinkItem(alchol: .beer, number: self.allData.numberOfMainCurrentMonthBeerRecord, price: self.allData.priceOfMainCurrentMonthBeerRecord)
                                 .foregroundColor(.primary)
                         }
                         Spacer()
-                        NavigationLink(destination: DetailView(alchol: .soju, number: 18, price: 72000, month: 4)) {
-                            MonthlyDrinkItem(alchol: .soju, number: 18, price: 72000)
+                        NavigationLink(destination: DetailView(alchol: .soju, number: self.allData.numberOfMainCurrentMonthSojuRecord, price: self.allData.priceOfMainCurrentMonthSojuRecord, month: self.allData.currentMonth)) {
+                            MonthlyDrinkItem(alchol: .soju, number: self.allData.numberOfMainCurrentMonthSojuRecord, price: self.allData.priceOfMainCurrentMonthSojuRecord)
                                 .foregroundColor(.primary)
                         }
                     }
                     .padding(.top, 15)
                     .padding(.horizontal, 25)
                     
-                    Rectangle()
-                        .fill(Color(UIColor.systemGroupedBackground))
-                        .frame(width: UIScreen.main.bounds.width, height: 15)
+                    ThickDivider()
                         .padding(.top, 30)
                     
-                    Text("최근 기록들")
-                        .font(.title)
-                        .bold()
-                        .padding(.top, 30)
+                    TitleText("최근 기록들")
+                        .padding(.top, 20)
                         .padding(.horizontal, 25)
                     
                     RecentRecordList()
                         .padding(.top, 10)
                         .padding(.horizontal, 25)
                     
-                    Rectangle()
-                        .fill(Color(UIColor.systemGroupedBackground))
-                        .frame(width: UIScreen.main.bounds.width, height: 15)
+                    ThickDivider()
                         .padding(.top, 30)
                     
-                    Text("지난 달에 마신 양")
-                        .font(.title)
-                        .bold()
-                        .padding(.top, 30)
+                    TitleText("지난 달에 마신 양")
+                        .padding(.top, 20)
                         .padding(.horizontal, 25)
                     
                     LastDrinkRecordList()
@@ -63,8 +63,13 @@ struct MainView: View {
                         .padding(.horizontal, 25)
                 }
             }
-            .navigationBarHidden(true)
-            .padding(.top, 1)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("술록")
+        }
+        .searchable(text: self.$searchText) {
+            ForEach(0..<10) {
+                Text("\($0)")
+            }
         }
     }
 }
