@@ -8,28 +8,35 @@
 import SwiftUI
 
 struct AllRecordList: View {
+    var alchol: Alchol
+    @EnvironmentObject var allData: AllData
+    
+    func getMonth(date: String) -> String {
+        let startIndex = date.index(date.startIndex, offsetBy: 8)
+        return String(date[startIndex ..< date.endIndex])
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("26일")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            Divider()
-                .padding(.top, 10)
-            
-            RecentRecordItem(alchol: .beer, name: "칭따오", number: 2, price: 12000)
-                .padding(.top, 10)
-            RecentRecordItem(alchol: .soju, name: "진로", number: 1, price: 4000)
-                .padding(.top, 10)
-            
-            Text("25일")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-                .padding(.top, 20)
-            Divider()
-                .padding(.top, 10)
-            
-            RecentRecordItem(alchol: .soju, name: "참이슬", number: 6, price: 24000)
-                .padding(.top, 10)
+            ForEach(self.alchol == .beer ? self.allData.detailCurrentMonthBeerRecord.indices : self.allData.detailCurrentMonthSojuRecord.indices, id: \.self) { index in
+                let record = self.alchol == .beer ? self.allData.detailCurrentMonthBeerRecord[index] : self.allData.detailCurrentMonthSojuRecord[index]
+                if !self.allData.checkHasSameDay(index: index, alchol: self.alchol) {
+//                    Text("\(String(record.date[record.date.index(record.date.startIndex, offsetBy: 8)...record.date.endIndex]))일")
+//                        .font(.subheadline)
+//                        .foregroundColor(.secondary)
+                    
+                    Text("\(self.getMonth(date: record.date))일")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    
+                    Divider()
+                        .padding(.top, 10)
+                }
+                
+                RecentRecordItem(alchol: self.alchol, name: record.name, number: record.number, price: record.price)
+                    .padding(.top, self.allData.checkHasSameDay(index: index, alchol: self.alchol) ? 0 : 5)
+                    .padding(.bottom, 15)
+            }
         }
     }
 }

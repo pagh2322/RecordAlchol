@@ -26,7 +26,7 @@ struct RecentRecordList: View {
                 
                 RecentRecordItem(alchol: self.allData.mainCurrentMonthRecordList[index].alchol!, name: self.allData.mainCurrentMonthRecordList[index].name, number: self.allData.mainCurrentMonthRecordList[index].number, price: self.allData.mainCurrentMonthRecordList[index].price)
                     .padding(.top, self.allData.checkHasSameDay(index: index) ? 0 : 5)
-                    .padding(.bottom, self.allData.checkHasSameDay(index: index) ? 0 : 15)
+                    .padding(.bottom, 15)
             }
         }
         .padding(.top, 10)

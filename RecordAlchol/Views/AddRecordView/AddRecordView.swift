@@ -15,6 +15,7 @@ struct AddRecordView: View {
     @State var price = ""
     @State var name = ""
     @State var selectedDate = Date()
+    @EnvironmentObject var allData: AllData
     
     var body: some View {
         NavigationView {
@@ -85,7 +86,7 @@ struct AddRecordView: View {
                 HStack {
                     Text("날짜")
                         .foregroundColor(.secondary)
-                    DatePicker("", selection: $selectedDate, displayedComponents: .date)
+                    DatePicker("", selection: self.$selectedDate, displayedComponents: .date)
                 }
                 .padding(.top, 20)
                 Divider()
@@ -120,11 +121,20 @@ struct AddRecordView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button(action: {
-                        
+                        self.allData.currentRecord.name = self.name
+                        self.allData.currentRecord.price = Int(self.price)!
+                        self.allData.currentRecord.number = Int(self.number)!
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyy.MM.dd"
+                        self.allData.currentRecord.date = dateFormatter.string(from: self.selectedDate)
+                        self.allData.currentRecord.alchol = self.beerSelected ? .beer : .soju
+                        self.allData.addRecord()
+                        self.showModalView = false
                     }) {
                         Text("완료")
                             .bold()
                     }
+                    .disabled(self.name.isEmpty || self.number.isEmpty || self.price.isEmpty)
                     .foregroundColor(self.name.isEmpty || self.number.isEmpty || self.price.isEmpty ? .secondary : .primary)
                 }
             }

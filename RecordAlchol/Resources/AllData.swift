@@ -9,7 +9,8 @@ import Foundation
 
 final class AllData: ObservableObject {
     @Published var recordList: [MonthData] = load("RecordData.json")
-    var currentMonth = 4 // 실제 날짜의 월
+    var currentMonth = 5 // 실제 날짜의 월
+    var currentRecord = AlcholListData(name: "", number: -1, price: -1, date: "")
     
     @Published var currentMonthForDetailView = 4 {
         didSet {
@@ -28,6 +29,13 @@ final class AllData: ObservableObject {
                 price2 += record.price
             }
             self.priceOfDetailCurrentMonthSojuRecord = price2
+            
+            self.detailCurrentMonthBeerRecord = self.detailCurrentMonthRecord.beerList.sorted { firstRecord, secondRecord in
+                return firstRecord.date > secondRecord.date
+            }
+            self.detailCurrentMonthSojuRecord = self.detailCurrentMonthRecord.sojuList.sorted { firstRecord, secondRecord in
+                return firstRecord.date > secondRecord.date
+            }
         }
     }
     
@@ -141,18 +149,65 @@ final class AllData: ObservableObject {
             price2 += record.price
         }
         self.priceOfDetailCurrentMonthSojuRecord = price2
+        
+        self.detailCurrentMonthBeerRecord = self.detailCurrentMonthRecord.beerList.sorted { firstRecord, secondRecord in
+            return firstRecord.date > secondRecord.date
+        }
+        self.detailCurrentMonthSojuRecord = self.detailCurrentMonthRecord.sojuList.sorted { firstRecord, secondRecord in
+            return firstRecord.date > secondRecord.date
+        }
     }
     
     func checkHasSameDay(index: Int) -> Bool {
-//        var result = false
-//        self.mainCurrentMonthRecordList.forEach { record in
-//            if record.date == date {
-//                result = true
-//            }
-//        }
         if index != 0 {
             return self.mainCurrentMonthRecordList[index - 1].date == self.mainCurrentMonthRecordList[index].date
         }
         return false
+    }
+    
+    func checkHasSameDay(index: Int, alchol: Alchol) -> Bool {
+        if index != 0 {
+            if alchol == .beer {
+                return self.detailCurrentMonthBeerRecord[index - 1].date == self.detailCurrentMonthBeerRecord[index].date
+
+            } else {
+                return self.detailCurrentMonthSojuRecord[index - 1].date == self.detailCurrentMonthSojuRecord[index].date
+            }
+        }
+        return false
+    }
+    
+    func addRecord() {
+        if self.currentRecord.alchol == .beer {
+            self.recordList[self.currentMonthForDetailView - 1].beerList.insert(self.currentRecord, at: 0)
+            self.recordList[self.currentMonthForDetailView - 1].numberOfBeer += self.currentRecord.number
+            self.detailCurrentMonthRecord = self.recordList[self.currentMonthForDetailView - 1]
+            self.detailCurrentMonthBeerRecord = self.detailCurrentMonthRecord.beerList
+            self.numberOfDetailCurrentMonthBeerRecord = self.detailCurrentMonthRecord.numberOfBeer
+            var price = 0
+            for record in self.detailCurrentMonthBeerRecord {
+                price += record.price
+            }
+            self.priceOfDetailCurrentMonthBeerRecord = price
+            self.detailCurrentMonthBeerRecord = self.detailCurrentMonthRecord.beerList.sorted { firstRecord, secondRecord in
+                return firstRecord.date > secondRecord.date
+            }
+        } else {
+            self.recordList[self.currentMonthForDetailView - 1].sojuList.insert(self.currentRecord, at: 0)
+            self.recordList[self.currentMonthForDetailView - 1].numberOfSoju += self.currentRecord.number
+            self.detailCurrentMonthRecord = self.recordList[self.currentMonthForDetailView - 1]
+            self.detailCurrentMonthSojuRecord = self.detailCurrentMonthRecord.sojuList
+            self.numberOfDetailCurrentMonthSojuRecord = self.detailCurrentMonthRecord.numberOfSoju
+            var price2 = 0
+            for record in self.detailCurrentMonthSojuRecord {
+                price2 += record.price
+            }
+            self.priceOfDetailCurrentMonthSojuRecord = price2
+            self.detailCurrentMonthSojuRecord = self.detailCurrentMonthRecord.sojuList.sorted { firstRecord, secondRecord in
+                return firstRecord.date > secondRecord.date
+            }
+        }
+        self.recordList[self.currentMonthForDetailView - 1].totalPrice += self.currentRecord.price
+        self.currentRecord = AlcholListData(name: "", number: -1, price: -1, date: "")
     }
 }

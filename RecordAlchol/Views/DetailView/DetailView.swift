@@ -71,6 +71,7 @@ struct DetailView: View {
                 HStack {
                     Text("전체 기록")
                         .font(.title3)
+                        .bold()
                     Spacer()
                     
                     Button(action: {
@@ -87,13 +88,14 @@ struct DetailView: View {
                 .padding(.horizontal, 25)
                 
                 
-                AllRecordList()
+                AllRecordList(alchol: self.alchol)
                     .padding(.top, 15)
                     .padding(.horizontal, 25)
             }
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
+        .navigationTitle(self.alchol == .beer ? "맥주" : "소주")
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
@@ -106,6 +108,7 @@ struct DetailView: View {
         }
         .onAppear {
             self.allData.update()
+            self.allData.currentMonthForDetailView = self.allData.currentMonth
         }
     }
 }
