@@ -124,5 +124,101 @@
                 "date": "2022.04.22"
             }
         ]
-    }
+    },
+    {
+        "month": 5,
+        "totalPrice": 0,
+        "numberOfBeer": 0,
+        "numberOfSoju": 0,
+        "beerList": [
+            
+        ],
+        "sojuList": [
+            
+        ]
+    },
+    {
+        "month": 6,
+        "totalPrice": 0,
+        "numberOfBeer": 0,
+        "numberOfSoju": 0,
+        "beerList": [
+            
+        ],
+        "sojuList": [
+            
+        ]
+    },
+    {
+        "month": 7,
+        "totalPrice": 0,
+        "numberOfBeer": 0,
+        "numberOfSoju": 0,
+        "beerList": [
+            
+        ],
+        "sojuList": [
+            
+        ]
+    },
+    {
+        "month": 8,
+        "totalPrice": 0,
+        "numberOfBeer": 0,
+        "numberOfSoju": 0,
+        "beerList": [
+            
+        ],
+        "sojuList": [
+            
+        ]
+    },
+    {
+        "month": 9,
+        "totalPrice": 0,
+        "numberOfBeer": 0,
+        "numberOfSoju": 0,
+        "beerList": [
+            
+        ],
+        "sojuList": [
+            
+        ]
+    },
+    {
+        "month": 10,
+        "totalPrice": 0,
+        "numberOfBeer": 0,
+        "numberOfSoju": 0,
+        "beerList": [
+            
+        ],
+        "sojuList": [
+            
+        ]
+    },
+    {
+        "month": 11,
+        "totalPrice": 0,
+        "numberOfBeer": 0,
+        "numberOfSoju": 0,
+        "beerList": [
+            
+        ],
+        "sojuList": [
+            
+        ]
+    },
+    {
+        "month": 12,
+        "totalPrice": 0,
+        "numberOfBeer": 0,
+        "numberOfSoju": 0,
+        "beerList": [
+            
+        ],
+        "sojuList": [
+            
+        ]
+    },
 ]

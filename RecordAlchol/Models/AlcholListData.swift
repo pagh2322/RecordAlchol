@@ -12,4 +12,5 @@ struct AlcholListData: Hashable, Codable {
     var number: Int
     var price: Int
     var date: String
+    var alchol: Alchol?
 }

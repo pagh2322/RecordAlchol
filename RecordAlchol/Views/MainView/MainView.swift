@@ -27,12 +27,12 @@ struct MainView: View {
                         .padding(.horizontal, 25)
                     
                     HStack {
-                        NavigationLink(destination: DetailView(alchol: .beer, number: self.allData.numberOfMainCurrentMonthBeerRecord, price: self.allData.priceOfMainCurrentMonthBeerRecord, month: self.allData.currentMonth)) {
+                        NavigationLink(destination: DetailView(alchol: .beer)) {
                             MonthlyDrinkItem(alchol: .beer, number: self.allData.numberOfMainCurrentMonthBeerRecord, price: self.allData.priceOfMainCurrentMonthBeerRecord)
                                 .foregroundColor(.primary)
                         }
                         Spacer()
-                        NavigationLink(destination: DetailView(alchol: .soju, number: self.allData.numberOfMainCurrentMonthSojuRecord, price: self.allData.priceOfMainCurrentMonthSojuRecord, month: self.allData.currentMonth)) {
+                        NavigationLink(destination: DetailView(alchol: .soju)) {
                             MonthlyDrinkItem(alchol: .soju, number: self.allData.numberOfMainCurrentMonthSojuRecord, price: self.allData.priceOfMainCurrentMonthSojuRecord)
                                 .foregroundColor(.primary)
                         }
@@ -43,7 +43,7 @@ struct MainView: View {
                     ThickDivider()
                         .padding(.top, 30)
                     
-                    TitleText("최근 기록들")
+                    TitleText("이번 달 기록")
                         .padding(.top, 20)
                         .padding(.horizontal, 25)
                     
@@ -59,7 +59,7 @@ struct MainView: View {
                         .padding(.horizontal, 25)
                     
                     LastDrinkRecordList()
-                        .padding(.top, 10)
+                        .padding(.top, 15)
                         .padding(.horizontal, 25)
                 }
             }

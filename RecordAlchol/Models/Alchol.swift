@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Alchol {
+enum Alchol: Codable {
     case beer
     case soju
     

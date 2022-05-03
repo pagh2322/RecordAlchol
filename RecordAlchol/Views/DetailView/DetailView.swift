@@ -9,11 +9,9 @@ import SwiftUI
 
 struct DetailView: View {
     var alchol: Alchol
-    var number: Int
-    var price: Int
     @State var showModalView = false
-    @State var month: Int
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var allData: AllData
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
@@ -21,24 +19,24 @@ struct DetailView: View {
                 // 월 이동 버튼
                 HStack {
                     Button(action: {
-                        if self.month == 1 {
-                            self.month = 12
+                        if self.allData.currentMonthForDetailView == 1 {
+                            self.allData.currentMonthForDetailView = 12
                         } else {
-                            self.month -= 1
+                            self.allData.currentMonthForDetailView -= 1
                         }
                     }) {
                         Image(systemName: "chevron.left")
                     }
                     .foregroundColor(.primary)
                     
-                    Text("\(self.month)월")
+                    Text("\(self.allData.currentMonthForDetailView)월")
                         .bold()
                     
                     Button(action: {
-                        if self.month == 12 {
-                            self.month = 1
+                        if self.allData.currentMonthForDetailView == 12 {
+                            self.allData.currentMonthForDetailView = 1
                         } else {
-                            self.month += 1
+                            self.allData.currentMonthForDetailView += 1
                         }
                     }) {
                         Image(systemName: "chevron.right")
@@ -55,12 +53,12 @@ struct DetailView: View {
                     .padding(.horizontal, 25)
                 
                 HStack {
-                    Text("\(self.number)병 마셨어요")
+                    Text("\(self.alchol == .beer ? self.allData.numberOfDetailCurrentMonthBeerRecord : self.allData.numberOfDetailCurrentMonthSojuRecord)병 마셨어요")
                         .font(.title)
                         .bold()
                     Spacer()
                     
-                    Text("\(self.price)원")
+                    Text("\(self.alchol == .beer ? self.allData.priceOfDetailCurrentMonthBeerRecord : self.allData.priceOfDetailCurrentMonthSojuRecord)원")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
@@ -105,6 +103,9 @@ struct DetailView: View {
                         .foregroundColor(.primary)
                 }
             }
+        }
+        .onAppear {
+            self.allData.update()
         }
     }
 }

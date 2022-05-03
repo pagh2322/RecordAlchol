@@ -9,29 +9,26 @@ import SwiftUI
 
 struct RecentRecordList: View {
     var space: CGFloat = 10
+    @EnvironmentObject var allData: AllData
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("2022.04.26")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            Divider()
-                .padding(.top, 10)
-            
-            RecentRecordItem(alchol: .beer, name: "칭따오", number: 2, price: 12000)
-                .padding(.top, 10)
-            RecentRecordItem(alchol: .soju, name: "진로", number: 1, price: 4000)
-                .padding(.top, self.space)
-            
-            Text("2022.04.25")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-                .padding(.top, 20)
-            Divider()
-                .padding(.top, 10)
-            
-            RecentRecordItem(alchol: .soju, name: "참이슬", number: 6, price: 24000)
-                .padding(.top, 10)
+            ForEach(self.allData.mainCurrentMonthRecordList.indices, id: \.self) { index in
+                if !self.allData.checkHasSameDay(index: index) {
+                    Text(self.allData.mainCurrentMonthRecordList[index].date)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    
+                    Divider()
+                        .padding(.top, 10)
+                }
+                
+                
+                RecentRecordItem(alchol: self.allData.mainCurrentMonthRecordList[index].alchol!, name: self.allData.mainCurrentMonthRecordList[index].name, number: self.allData.mainCurrentMonthRecordList[index].number, price: self.allData.mainCurrentMonthRecordList[index].price)
+                    .padding(.top, self.allData.checkHasSameDay(index: index) ? 0 : 5)
+                    .padding(.bottom, self.allData.checkHasSameDay(index: index) ? 0 : 15)
+            }
         }
+        .padding(.top, 10)
     }
 }

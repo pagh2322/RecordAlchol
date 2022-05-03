@@ -25,7 +25,7 @@
 		B7A8FDCE281BABBF0092E3DE /* MonthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8FDCD281BABBF0092E3DE /* MonthData.swift */; };
 		B7A8FDD0281BABCD0092E3DE /* AlcholListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8FDCF281BABCD0092E3DE /* AlcholListData.swift */; };
 		B7A8FDD3281BBC8C0092E3DE /* LoadFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8FDD2281BBC8C0092E3DE /* LoadFunction.swift */; };
-		B7A8FDD5281BBCBB0092E3DE /* DumyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8FDD4281BBCBB0092E3DE /* DumyData.swift */; };
+		B7A8FDD5281BBCBB0092E3DE /* AllData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8FDD4281BBCBB0092E3DE /* AllData.swift */; };
 		B7B85C39281BC360000C29B9 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B85C38281BC360000C29B9 /* CustomColor.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +49,7 @@
 		B7A8FDCD281BABBF0092E3DE /* MonthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthData.swift; sourceTree = "<group>"; };
 		B7A8FDCF281BABCD0092E3DE /* AlcholListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcholListData.swift; sourceTree = "<group>"; };
 		B7A8FDD2281BBC8C0092E3DE /* LoadFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFunction.swift; sourceTree = "<group>"; };
-		B7A8FDD4281BBCBB0092E3DE /* DumyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumyData.swift; sourceTree = "<group>"; };
+		B7A8FDD4281BBCBB0092E3DE /* AllData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllData.swift; sourceTree = "<group>"; };
 		B7B85C38281BC360000C29B9 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				B7A8FDCA281BA1C60092E3DE /* RecordData.json */,
-				B7A8FDD4281BBCBB0092E3DE /* DumyData.swift */,
+				B7A8FDD4281BBCBB0092E3DE /* AllData.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -256,7 +256,7 @@
 				B7141F47281969CE004B9CEF /* LastDrinkRecordList.swift in Sources */,
 				B7141F49281969EA004B9CEF /* LastDrinkRecordItem.swift in Sources */,
 				B740AB752819758800EA91AD /* AddRecordView.swift in Sources */,
-				B7A8FDD5281BBCBB0092E3DE /* DumyData.swift in Sources */,
+				B7A8FDD5281BBCBB0092E3DE /* AllData.swift in Sources */,
 				B740AB722819748900EA91AD /* AllRecordList.swift in Sources */,
 				B7141F4528196660004B9CEF /* RecentRecordList.swift in Sources */,
 			);
