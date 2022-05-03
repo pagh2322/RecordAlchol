@@ -10,9 +10,16 @@ import SwiftUI
 struct AddRecordView: View {
     @Binding var showModalView: Bool
     @State var beerSelected = true
-    @State var sojuSelected = false
     @State var number = ""
-    @State var price = ""
+    @State var price = "" {
+        didSet {
+            print(self.price)
+            if self.price > "9999" {
+                self.price = "50"
+                print(self.price)
+            }
+        }
+    }
     @State var name = ""
     @State var selectedDate = Date()
     @EnvironmentObject var allData: AllData
@@ -33,7 +40,6 @@ struct AddRecordView: View {
                             .stroke(self.beerSelected ? .primary : .secondary, lineWidth: 1))
                         .foregroundColor(self.beerSelected ? .primary : .secondary)
                         .onTapGesture {
-                            self.sojuSelected = false
                             self.beerSelected = true
                         }
                     
@@ -41,11 +47,10 @@ struct AddRecordView: View {
                         .padding(.horizontal, 20)
                         .padding(.vertical, 10)
                         .background(RoundedRectangle(cornerRadius: 6)
-                            .stroke(self.sojuSelected ? .primary : .secondary, lineWidth: 1))
-                        .foregroundColor(self.sojuSelected ? .primary : .secondary)
+                            .stroke(self.beerSelected ? .secondary : .primary , lineWidth: 1))
+                        .foregroundColor(self.beerSelected ? .secondary : .primary)
                         .onTapGesture {
                             self.beerSelected = false
-                            self.sojuSelected = true
                         }
                         .padding(.leading, 15)
                     

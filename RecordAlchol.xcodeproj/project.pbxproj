@@ -24,9 +24,8 @@
 		B7A8FDCB281BA1C60092E3DE /* RecordData.json in Resources */ = {isa = PBXBuildFile; fileRef = B7A8FDCA281BA1C60092E3DE /* RecordData.json */; };
 		B7A8FDCE281BABBF0092E3DE /* MonthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8FDCD281BABBF0092E3DE /* MonthData.swift */; };
 		B7A8FDD0281BABCD0092E3DE /* AlcholListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8FDCF281BABCD0092E3DE /* AlcholListData.swift */; };
-		B7A8FDD3281BBC8C0092E3DE /* LoadFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8FDD2281BBC8C0092E3DE /* LoadFunction.swift */; };
+		B7A8FDD3281BBC8C0092E3DE /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8FDD2281BBC8C0092E3DE /* JsonHelper.swift */; };
 		B7A8FDD5281BBCBB0092E3DE /* AllData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A8FDD4281BBCBB0092E3DE /* AllData.swift */; };
-		B7B85C39281BC360000C29B9 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B85C38281BC360000C29B9 /* CustomColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +47,8 @@
 		B7A8FDCA281BA1C60092E3DE /* RecordData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecordData.json; sourceTree = "<group>"; };
 		B7A8FDCD281BABBF0092E3DE /* MonthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthData.swift; sourceTree = "<group>"; };
 		B7A8FDCF281BABCD0092E3DE /* AlcholListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcholListData.swift; sourceTree = "<group>"; };
-		B7A8FDD2281BBC8C0092E3DE /* LoadFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFunction.swift; sourceTree = "<group>"; };
+		B7A8FDD2281BBC8C0092E3DE /* JsonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonHelper.swift; sourceTree = "<group>"; };
 		B7A8FDD4281BBCBB0092E3DE /* AllData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllData.swift; sourceTree = "<group>"; };
-		B7B85C38281BC360000C29B9 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +156,6 @@
 				B7141F42281964F5004B9CEF /* Alchol.swift */,
 				B7A8FDCD281BABBF0092E3DE /* MonthData.swift */,
 				B7A8FDCF281BABCD0092E3DE /* AlcholListData.swift */,
-				B7B85C38281BC360000C29B9 /* CustomColor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,7 +163,7 @@
 		B7A8FDD1281BBC790092E3DE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B7A8FDD2281BBC8C0092E3DE /* LoadFunction.swift */,
+				B7A8FDD2281BBC8C0092E3DE /* JsonHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -245,11 +242,10 @@
 				B7141F41281964DC004B9CEF /* RecentRecordItem.swift in Sources */,
 				B7141F5028197204004B9CEF /* DetailView.swift in Sources */,
 				B7141F312819603C004B9CEF /* MainView.swift in Sources */,
-				B7A8FDD3281BBC8C0092E3DE /* LoadFunction.swift in Sources */,
+				B7A8FDD3281BBC8C0092E3DE /* JsonHelper.swift in Sources */,
 				B7A8FDD0281BABCD0092E3DE /* AlcholListData.swift in Sources */,
 				B7141F2F2819603C004B9CEF /* RecordAlcholApp.swift in Sources */,
 				B7A78B06281F9FC800491984 /* ThickDivider.swift in Sources */,
-				B7B85C39281BC360000C29B9 /* CustomColor.swift in Sources */,
 				B7141F43281964F5004B9CEF /* Alchol.swift in Sources */,
 				B7141F3F281961AF004B9CEF /* MonthlyDrinkItem.swift in Sources */,
 				B7A8FDCE281BABBF0092E3DE /* MonthData.swift in Sources */,

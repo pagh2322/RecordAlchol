@@ -208,6 +208,7 @@ final class AllData: ObservableObject {
             }
         }
         self.recordList[self.currentMonthForDetailView - 1].totalPrice += self.currentRecord.price
+        save(data: self.recordList)
         self.currentRecord = AlcholListData(name: "", number: -1, price: -1, date: "")
     }
 }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MainView: View {
-//    @State var searchText = ""
     @EnvironmentObject var allData: AllData
     
     @ViewBuilder
@@ -66,10 +65,5 @@ struct MainView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("술록")
         }
-//        .searchable(text: self.$searchText) {
-//            ForEach(0..<10) {
-//                Text("\($0)")
-//            }
-//        }
     }
 }

@@ -81,7 +81,7 @@ struct DetailView: View {
                     }
                     .foregroundColor(.primary)
                     .sheet(isPresented: self.$showModalView) {
-                        AddRecordView(showModalView: self.$showModalView)
+                        AddRecordView(showModalView: self.$showModalView, beerSelected: self.alchol == .beer ? true : false)
                     }
                 }
                 .padding(.top, 30)

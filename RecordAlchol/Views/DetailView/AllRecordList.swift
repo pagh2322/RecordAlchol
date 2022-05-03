@@ -21,10 +21,6 @@ struct AllRecordList: View {
             ForEach(self.alchol == .beer ? self.allData.detailCurrentMonthBeerRecord.indices : self.allData.detailCurrentMonthSojuRecord.indices, id: \.self) { index in
                 let record = self.alchol == .beer ? self.allData.detailCurrentMonthBeerRecord[index] : self.allData.detailCurrentMonthSojuRecord[index]
                 if !self.allData.checkHasSameDay(index: index, alchol: self.alchol) {
-//                    Text("\(String(record.date[record.date.index(record.date.startIndex, offsetBy: 8)...record.date.endIndex]))일")
-//                        .font(.subheadline)
-//                        .foregroundColor(.secondary)
-                    
                     Text("\(self.getMonth(date: record.date))일")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
@@ -34,7 +30,7 @@ struct AllRecordList: View {
                 }
                 
                 RecentRecordItem(alchol: self.alchol, name: record.name, number: record.number, price: record.price)
-                    .padding(.top, self.allData.checkHasSameDay(index: index, alchol: self.alchol) ? 0 : 5)
+                    .padding(.top, self.allData.checkHasSameDay(index: index, alchol: self.alchol) ? 0 : 10)
                     .padding(.bottom, 15)
             }
         }
