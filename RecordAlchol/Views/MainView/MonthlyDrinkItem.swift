@@ -16,6 +16,7 @@ struct MonthlyDrinkItem: View {
         VStack(alignment: .leading) {
             Text(self.alchol.title)
                 .font(.subheadline)
+                .bold()
                 .foregroundColor(self.alchol == .beer ? Color(red: 176/255, green: 94/255, blue: 39/255) : Color(red: 48/255, green: 170/255, blue: 221/255))
             
             HStack {
@@ -33,7 +34,6 @@ struct MonthlyDrinkItem: View {
         }
         .padding(.vertical, 15)
         .padding(.leading, 15)
-//        .padding(.trailing, 65)
         .frame(width: (UIScreen.main.bounds.width - 75) / 2, height: 120, alignment: .leading)
         .background(self.alchol == .beer ? Color(red: 176/255, green: 94/255, blue: 39/255, opacity: 0.3) : Color(red: 48/255, green: 170/255, blue: 221/255, opacity: 0.3))
         .cornerRadius(20)

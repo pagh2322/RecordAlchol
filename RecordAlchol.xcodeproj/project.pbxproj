@@ -116,8 +116,8 @@
 			children = (
 				B7141F302819603C004B9CEF /* MainView.swift */,
 				B7141F3E281961AF004B9CEF /* MonthlyDrinkItem.swift */,
-				B7141F40281964DC004B9CEF /* RecentRecordItem.swift */,
 				B7141F4428196660004B9CEF /* RecentRecordList.swift */,
+				B7141F40281964DC004B9CEF /* RecentRecordItem.swift */,
 				B7141F46281969CE004B9CEF /* LastDrinkRecordList.swift */,
 				B7141F48281969EA004B9CEF /* LastDrinkRecordItem.swift */,
 			);

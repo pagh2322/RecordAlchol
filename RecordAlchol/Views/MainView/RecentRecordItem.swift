@@ -20,7 +20,6 @@ struct RecentRecordItem: View {
                 .foregroundColor(self.alchol == .beer ? Color(red: 176/255, green: 94/255, blue: 39/255) : Color(red: 48/255, green: 170/255, blue: 221/255))
             
             Text(self.name)
-                .bold()
             
             Text("\(self.number)병")
                 .bold()
