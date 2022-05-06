@@ -12,4 +12,4 @@
 ![](Screenshots/add.png)
 
 # 느낀 점
-**`SwiftUI`**에 대해 좀 더 알 수 있게 되었습니다. **`EnvironmentObject`**와 같은 개념들과 친해질 수 있어서 좋았습니다. 저장 방식은 **`Json`**으로 구현했습니다.
+**`SwiftUI`** 에 대해 좀 더 알 수 있게 되었습니다. **`EnvironmentObject`** 와 같은 개념들과 친해질 수 있어서 좋았습니다. 저장 방식은 **`Json`** 으로 구현했습니다.
